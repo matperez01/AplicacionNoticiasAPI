@@ -1,8 +1,10 @@
-export const getNews = async (categorias,orden) => {
-  const API = "a46ff5f69c0145a095f159c044d2a78c";
+export const getNews = async (categorias) => {
+  const API = "pub_74578266d7bf4c8e06e29ddc6616b4f1b5f49";
   const cantidad = 20
-  const url = `https://newsapi.org/v2/everything?q=${categorias}&sortBy=${orden}&apiKey=${API}&pageSize=${cantidad}&language=es`;
+  const url = `https://newsdata.io/api/1/latest?apikey=${API}&category=${categorias}&language=es&country=ar`;
   const resp = await fetch(url);
   const data = await resp.json();
   return data;
 };
+
+

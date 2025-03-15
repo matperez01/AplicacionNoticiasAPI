@@ -6,7 +6,7 @@ import { VistaNoticias } from "./VistaNoticias";
 export const Noticias = () => {
   
   const [Categorias, setCategorias] = useState("Technology");
-  const [Orden, setOrden] = useState("relevancy");
+
   const [SwitchActivo, setSwitchActivo] = useState(false);
 
   const traerCategorias = (e) => {
@@ -14,10 +14,7 @@ export const Noticias = () => {
     setCategorias(nuevaOpcion);
   };
 
-  const traerOrden = (e) => {
-    const nuevaOpcion = e.target.value;
-    setOrden(nuevaOpcion);
-  };
+
 
   
 
@@ -42,27 +39,28 @@ export const Noticias = () => {
             name="categoria"
             className={`p-1.5 h-10 border rounded-2xl mb-4 mr-3 `}>
 
-            <option value="Business" className="text-black">Business</option>
-            <option value="Entertainment" className="text-black">Entertainment</option>
-            <option value="General" className="text-black">General</option>
-            <option value="Health" className="text-black">Health</option>
-            <option value="Science" className="text-black">Science</option>
-            <option value="Sports" className="text-black">Sports</option>
-            <option value="Technology" className="text-black">Technology</option>
+            <option value="business" className="text-black">Business</option>
+            <option value="crime" className="text-black">Crime</option>
+            <option value="domestic" className="text-black">domestic</option>
+            <option value="education" className="text-black">education</option>
+            <option value="entertainment" className="text-black">entertainment</option>
+            <option value="entertainment" className="text-black">entertainment</option>
+            <option value="health" className="text-black">health</option>
+            <option value="lifestyle" className="text-black">lifestyle</option>
+            <option value="politics" className="text-black">politics</option>
+            <option value="science" className="text-black">science</option>
+            <option value="sports" className="text-black">sports</option>
+            <option value="technology" className="text-black">technology</option>
+            <option value="top" className="text-black">top</option>
+            <option value="tourism" className="text-black">tourism</option>
+            <option value="world" className="text-black">world</option>
+            <option value="other" className="text-black">other</option>
+  
 
           </select>
 
         
 
-          <select
-            name="Relevancia"
-            onChange={traerOrden}
-            className="p-1.5 h-10 border rounded-2xl mb-4"
-          >
-            <option value="relevancy" className="text-black">Mas Relevancia</option>
-            <option value="popularity" className="text-black">Populares</option>
-            <option value="publishedAt" className="text-black">Reciente</option>
-          </select>
 
           <article className="flex justify-center">
             <p className="mr-2 ">{SwitchActivo ? "Modo oscuro" : "Modo Claro"}  </p>
@@ -86,7 +84,7 @@ export const Noticias = () => {
         
       </section>
       <section className="w-full flex flex-wrap justify-around items-center">
-        <VistaNoticias categorias={Categorias} orden={Orden}  />
+        <VistaNoticias categorias={Categorias}   />
       </section>
     </section>
   );
